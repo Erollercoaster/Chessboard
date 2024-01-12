@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  max-width: 80vh;
+  max-height: 80vh;
+  width: 80vh;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: calc(50 / 1920 * 100vw);
+  background-image: url(10026.jpg);
+  background-size: cover;
+  background-repeat: no-repeat; }
+  body #container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vh;
+    height: 80vh;
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; }
+
+.row1, .row2, .row3, .row4, .row5, .row6, .row7, .row8 {
+  display: flex;
+  width: 100%;
+  height: 12.5%;
+  justify-content: space-between;
+  flex-grow: 1; }
+
+.black {
+  background-color: #B58863;
+  width: 100%;
+  height: 100%;
+  position: relative; }
+
+.white {
+  background-color: #F0D9B5;
+  width: 100%;
+  height: 100%;
+  position: relative; }
+
+.letter-label-white {
+  position: absolute;
+  bottom: calc(5 / 1920 * 100vw);
+  right: calc(5 / 1920 * 100vw);
+  font-size: calc(20 / 1920 * 100vw);
+  color: #B58863; }
+
+.number-label-white {
+  position: absolute;
+  top: calc(5 / 1920 * 100vw);
+  left: calc(5 / 1920 * 100vw);
+  font-size: calc(20 / 1920 * 100vw);
+  color: #B58863; }
+
+.letter-label-black {
+  position: absolute;
+  bottom: calc(5 / 1920 * 100vw);
+  right: calc(5 / 1920 * 100vw);
+  font-size: calc(20 / 1920 * 100vw);
+  color: #F0D9B5; }
+
+.number-label-black {
+  position: absolute;
+  top: calc(5 / 1920 * 100vw);
+  left: calc(5 / 1920 * 100vw);
+  font-size: calc(20 / 1920 * 100vw);
+  color: #F0D9B5; }
+
+/* chess pieces */
+.pieces {
+  position: absolute;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: auto; }
+
+/* animations */
+@keyframes moveWhitePawn5 {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(200%); } }
+#white-pawn5 {
+  animation-name: moveWhitePawn5;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  z-index: 1; }
+
+@keyframes moveBlackPawn5 {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(-200%); } }
+#black-pawn5 {
+  animation-name: moveBlackPawn5;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  z-index: 1; }
+
+@keyframes moveWhiteBishop2 {
+  0% {
+    transform: translate(0, 0); }
+  100% {
+    transform: translate(-300%, 300%); } }
+#white-bishop2 {
+  animation-name: moveWhiteBishop2;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+  z-index: 1; }
+
+@keyframes moveBlackKnight1 {
+  0% {
+    transform: translate(0, 0); }
+  100% {
+    transform: translate(100%, -200%); } }
+#black-knight1 {
+  animation-name: moveBlackKnight1;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+  z-index: 1; }
+
+@keyframes moveWhiteQueen {
+  0% {
+    transform: translate(0, 0); }
+  100% {
+    transform: translate(400%, 400%); } }
+@keyframes moveWhiteQueen2 {
+  0% {
+    transform: translate(400%, 400%); }
+  100% {
+    transform: translate(200%, 600%); } }
+#white-queen {
+  animation-name: moveWhiteQueen, moveWhiteQueen2;
+  animation-duration: 1s, 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards, forwards;
+  animation-delay: 5s, 7s;
+  z-index: 1; }
+
+@keyframes moveBlackKnight2 {
+  0% {
+    transform: translate(0, 0); }
+  100% {
+    transform: translate(-100%, -200%); } }
+#black-knight2 {
+  animation-name: moveBlackKnight2;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: 6s;
+  animation-fill-mode: forwards;
+  z-index: 1; }
+
+@keyframes disappearPawn {
+  to {
+    opacity: 0;
+    visibility: hidden; } }
+#black-pawn6 {
+  animation-name: disappearPawn;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 7.5s; }
+
+@keyframes checkmate {
+  to {
+    background-color: red;
+    box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.7); } }
+#black-king {
+  animation-name: checkmate;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 8s; }
+
+/*# sourceMappingURL=style.css.map */
